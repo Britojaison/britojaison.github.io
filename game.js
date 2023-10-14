@@ -4,6 +4,13 @@ var userClickedPattern = [];
 //console.log(buttonColours);
 var started = false;
 var level = 0;
+$("#level-title").click(function(){
+    if (!started) {
+        $("#level-title").text("Level " + level);
+        nextSequence();
+        started = true;
+    }
+})
 $(document).keydown(function () {
     if (!started) {
         $("#level-title").text("Level " + level);
