@@ -4,16 +4,18 @@ var userClickedPattern = [];
 //console.log(buttonColours);
 var started = false;
 var level = 0;
+
 $("#level-title").click(function(){
     if (!started) {
-        $("#level-title").text("Level " + level);
+        //$("#level-title").text("Level " + level);
         nextSequence();
         started = true;
     }
 });
 $(document).keydown(function () {
     if (!started) {
-        $("#level-title").text("Level " + level);
+        // $("#level-title").text("Level " + level);
+        // $("#checkpoint").text("to checkpoint")
         nextSequence();
         started = true;
     }
@@ -60,6 +62,7 @@ function nextSequence() {
     level++;
 
     $("#level-title").text("Level " + level);
+    $("#checkpoint").text(15-level+"-levels to checkpoint")
     var num = Math.random() * 4;
     var randomNumber = Math.floor(num);
     var randomChosenColour = buttonColours[randomNumber]
