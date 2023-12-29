@@ -12,6 +12,8 @@ body {
   font-family: 'Press Start 2P', cursive;
   font-size: 1.5rem;
   color: #FEF2BF;
+  width: 155rem;
+  position: fixed ;
 }
 .container {
   display: block;

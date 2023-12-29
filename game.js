@@ -62,7 +62,7 @@ function nextSequence() {
     level++;
 
     $("#level-title").text("Level " + level);
-    $("#checkpoint").text(15-level+"-levels to checkpoint")
+    $("#checkpoint").text(15-level+" to checkpoint")
     var num = Math.random() * 4;
     var randomNumber = Math.floor(num);
     var randomChosenColour = buttonColours[randomNumber]
