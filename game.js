@@ -5,7 +5,7 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
-$("#level-title").click(function(){
+$("#level-title").click(function () {
     if (!started) {
         //$("#level-title").text("Level " + level);
         nextSequence();
@@ -43,7 +43,7 @@ function checkAnswer(currentlevel) {
         console.log("wrong");
         playSound("wrong");
         $("body").addClass("game-over");
-        setTimeout(function(){$("body").removeClass("game-over")},200);
+        setTimeout(function () { $("body").removeClass("game-over") }, 200);
         $("#level-title").text("press any key to start");
         //alert("YOu lose at level:"+level);
         startOver();
@@ -51,18 +51,21 @@ function checkAnswer(currentlevel) {
 
 }
 
-function startOver(){
-    level=0;
-    gamePattern=[];
-    started=false;
+function startOver() {
+    level = 0;
+    gamePattern = [];
+    started = false;
 }
 
 function nextSequence() {
-    userClickedPattern=[];
+    userClickedPattern = [];
     level++;
 
     $("#level-title").text("Level " + level);
-    $("#checkpoint").text(15-level+" to checkpoint")
+    if (15 - level > 0) { $("#checkpoint").text(15 - level + " to checkpoint") }
+    else {
+        $("#checkpoint").text("You won")
+    }
     var num = Math.random() * 4;
     var randomNumber = Math.floor(num);
     var randomChosenColour = buttonColours[randomNumber]
